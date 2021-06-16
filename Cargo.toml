@@ -35,9 +35,9 @@ noise = { version = "0.7", optional = true}
 reqwest = { version = "0.11", optional = true, default-features = false, features = ["blocking", "rustls-tls"] }
 serde = { version = "1.0", optional = true, features = ["derive"] }
 serde_json = { version = "1.0", optional = true }
-lazy_static = { version = "1.4", optional = true }
 once_cell = { version = "1.4", optional = true }
 mysql = { version = "20.0", optional = true }
+crossbeam-channel = { version = "0.5", optional = true }
 dashmap = { version = "4.0", optional = true }
 zip = { version = "0.5.8", optional = true }
 rand = {version = "0.8", optional = true}
@@ -54,7 +54,7 @@ git = ["git2", "chrono"]
 http = ["reqwest", "serde", "serde_json", "once_cell", "jobs"]
 json = ["serde", "serde_json"]
 log = ["chrono"]
-sql = ["mysql", "serde", "serde_json", "once_cell", "dashmap", "jobs"]
+sql = ["mysql", "serde", "serde_json", "once_cell", "dashmap", "jobs", "crossbeam-channel"]
 
 # non-default features
 hash = ["base64", "const-random", "md-5", "hex", "sha-1", "sha2",  "twox-hash"]
